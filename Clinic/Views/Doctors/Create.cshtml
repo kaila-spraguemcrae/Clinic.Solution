@@ -1,0 +1,20 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Clinic.Models.Doctor
+
+<h2>Add a new Doctor</h2>
+
+@using (Html.BeginForm())
+{
+  @Html.Label("Doctor Full Name")
+  @Html.TextBoxFor(model => model.DoctorName)
+
+  @Html.Label("Doctor Specialty/Field")
+  @Html.TextBoxFor(model => model.DoctorField)
+
+  @* ??@Html.Label("Add a patient") *@
+
+  <input type="submit" value="Add Doctor" class="btn btn-default" />
+}

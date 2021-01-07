@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Clinic.Models;
+@model List<Clinic.Models.Doctor>;
+
+<h1>Doctor Directory</h1>
+
+@if (@Model.Count == 0)
+{
+  <h3>This clinic currenly has no Doctors</h3>
+}
+
+@foreach (Doctor doctor in Model)
+{
+  <ul>
+    <li>@Html.ActionLink($"{doctor.DoctorName} | {doctor.DoctorField}", "Details", new { id = doctor.DoctorId }) </li>
+  </ul>
+}
+
+<p>@Html.ActionLink("Add a new Doctor", "Create")</p>
