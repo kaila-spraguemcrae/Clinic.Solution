@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Clinic Chitty Chitty Bang Bang</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'>
+    <link rel='stylesheet' href="~/css/styles.css" type="text/css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-center">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active text-light" href="/">Home</a>
+        <a class="nav-item nav-link text-light" href="/patients">Patient Directory</a>
+        <a class="nav-link nav-link text-light" href="/patients/create">Add a new Patient</a>
+        <a class="nav-item nav-link text-light" href="/doctors">Doctor Directory</a>
+        <a class="nav-item nav-link text-light" href="/doctors/create">Add a new Doctor</a>
+      </div>
+    </nav>
+    <div class="container">
+      @RenderBody()
+    </div>
+  </body>
+</html>
