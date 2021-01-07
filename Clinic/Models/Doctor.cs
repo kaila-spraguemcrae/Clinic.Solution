@@ -6,7 +6,7 @@ namespace Clinic.Models
   {
     public Doctor()
     {
-      this.Patients = new HashSet<Doctor>();
+      this.Patients = new HashSet<DoctorPatient>();
     }
   
 
