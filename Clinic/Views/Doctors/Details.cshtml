@@ -1,0 +1,20 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Clinic.Models.Doctor;
+
+<h2>Doctor Details</h2>
+<hr />
+<h3>@Html.DisplayFor(model => model.DoctorName) </h3>
+<h4> Specialy: @Html.DisplayFor(model => model.DoctorField) </h4>
+
+@if(@Model.Patients.Count == 0)
+{
+  <p>This doctor does not currently have any patients</p>
+}
+else
+{
+  <h4>Patients:</h4>
+  
+}
