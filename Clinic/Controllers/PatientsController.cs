@@ -43,9 +43,16 @@ namespace Clinic.Controllers
 
     public ActionResult Edit (int id)
     {
-      var thisPatient = _db.Patients.FirstOrDefault(patient => 
+      var thisPatient = _db.Patients.FirstOrDefault(patient =>patient.PatientId ==id);
+      return View(thisPatient);
     }
 
-
+    [HttpPost]
+    public ActionResult Edit (Patient patient)
+    {
+      _db.Entry(patient).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }

@@ -50,7 +50,9 @@ namespace Clinic.Controllers
     [HttpPost]
     public ActionResult Edit (Doctor doctor)
     {
-      _db.Entry(doctor).State = En
+      _db.Entry(doctor).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Index");
     }
   }
 }
