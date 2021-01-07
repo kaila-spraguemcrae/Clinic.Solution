@@ -18,6 +18,6 @@ namespace Clinic.Models
     [DataType(DataType.Date)]
     [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
     public DateTime AppointmentDate { get; set; }
-    public ICollection<DoctorPatient> Doctors {get;}
+    public ICollection<DoctorPatient> Doctors { get; }
   }
 }

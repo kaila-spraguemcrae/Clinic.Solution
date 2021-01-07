@@ -55,5 +55,16 @@ namespace Clinic.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+
+    public ActionResult Delete(int id)
+    {
+      var thisPatient = _db.Patients.FirstOrDefault(patients => patients.PatientId == id);
+      return View(thisPatient);
+    }
+    
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      var thisPatient = _db.Patients.FirstOrDefault(patients => patients.PatientId == id);
   }
 }

@@ -1,0 +1,29 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Clinic.Models.Patient;
+
+<h2>Patient Details</h2>
+<hr />
+<h3>@Html.DisplayFor(model => model.PatientName) </h3>
+
+@if(@Model.Doctors.Count == 0)
+{
+  <p>This patient is not seeing any doctors.</p>
+}
+else
+{
+  <h4>Doctors:</h4>
+  <ul>
+  @foreach (var join in Model.Doctors)
+  {
+    <li>@join.Doctor.DoctorName</li>
+    @using (@Html.BeginForm("DeleteDoctor", "Patients"))
+    {
+      @Html.Hidden("joinId", @join.DoctorPatientId)
+      <input type="submit" value="Delete" />
+    }
+  }
+  </ul>
+}
