@@ -15,7 +15,8 @@
 <ul>
 @foreach (Patient patient in Model)
 {
-  <li>@Html.ActionLink($"{patient.PatientName} <br />&nbsp; Next Appointment: {patient.AppointmentDate}", "Details", new { id = patient.PatientId }) </li>
+  <li>@Html.ActionLink($"{patient.PatientName}", "Details", new { id = patient.PatientId }) 
+  <br />&nbsp; Next Appointment: @patient.AppointmentDate.ToString("yyyy-MM-dd") </li>
 }
 </ul>
 

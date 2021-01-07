@@ -1,0 +1,17 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Clinic.Models.Doctor
+<h2>Add a patient for : @Html.DisplayFor(model => model.DoctorName)</h2>
+<hr />
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.DoctorId)
+
+  @Html.Label("Add a patient")
+  @Html.DropDownList("PatientId")
+
+  <input type="submit" value="Save" class="btn btn-default" />
+}

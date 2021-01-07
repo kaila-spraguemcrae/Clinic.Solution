@@ -7,7 +7,7 @@
 <h2>Doctor Details</h2>
 <hr />
 <h3>@Html.DisplayFor(model => model.DoctorName) </h3>
-<h4> Specialy: @Html.DisplayFor(model => model.DoctorField) </h4>
+<h4> Specialty: @Html.DisplayFor(model => model.DoctorField) </h4>
 
 @if(@Model.Patients.Count == 0)
 {
@@ -19,7 +19,7 @@ else
   <ul>
     @foreach (var join in Model.Patients)
     {
-        <li>@join.Patient.PatientName</li>
+        <li>@join.Patient.PatientName | @join.Patient.AppointmentDate.ToString("yyyy-MM-dd")</li>
         @using (@Html.BeginForm("DeletePatient", "Doctors"))
         {
           @Html.Hidden("joinId", @join.DoctorPatientId)

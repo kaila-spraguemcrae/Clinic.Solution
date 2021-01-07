@@ -1,0 +1,27 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Clinic.Models.Patient
+
+<h2>Add a new Patient</h2>
+
+@using (Html.BeginForm())
+{
+  <p>
+  @Html.Label("Full Name:")
+  @Html.TextBoxFor(model => model.PatientName)
+  </p>
+  <p>
+    @Html.Label("Date of Next Appointment:")
+    @Html.TextBoxFor(model => model.AppointmentDate, new { @type = "date" })
+  </p>
+  <p>
+    @Html.Label("Appointment is with:")
+    @Html.DropDownList("DoctorId")
+  </p>
+  <p>
+  <input type="submit" value="Add new Patient" class="btn btn-default" />
+  </p>
+}
+

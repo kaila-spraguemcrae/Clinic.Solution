@@ -13,8 +13,10 @@ namespace Clinic.Models
     }
     public int PatientId { get; set; }
     public string PatientName { get; set; }
+
     [DisplayName("Add AppointmentDate")]
-    [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{yyyy-MM-dd}")]
+    [DataType(DataType.Date)]
+    [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
     public DateTime AppointmentDate { get; set; }
     public ICollection<DoctorPatient> Doctors {get;}
   }

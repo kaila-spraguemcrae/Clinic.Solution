@@ -21,6 +21,7 @@ namespace Clinic.Controllers
     }
     public ActionResult Create()
     {
+      ViewBag.DoctorId = new SelectList(_db.Doctors, "DoctorId", "DoctorName");
       return View();
     }
 
