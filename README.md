@@ -12,6 +12,7 @@ This web application is for a Doctor Clinic to keep track of students & courses 
 
 - Keeps track of all patients and doctors at a Clinic.
 
+![SQL Design](./ReadmeAssets/img/SQLDesign.PNG "SQL Design Plan")
 ---
 
 ## Technologies used

@@ -19,7 +19,7 @@ else
   <ul>
     @foreach (var join in Model.Patients)
     {
-        <li>@join.Patient.PatientName | @join.Patient.AppointmentDate.ToString("yyyy-MM-dd")</li>
+        <li>@join.Patient.PatientName | @join.Patient.AppointmentDate</li>
         @using (@Html.BeginForm("DeletePatient", "Doctors"))
         {
           @Html.Hidden("joinId", @join.DoctorPatientId)

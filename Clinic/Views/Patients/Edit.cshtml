@@ -10,15 +10,18 @@
 
 @using (Html.BeginForm())
 {
-  @Html.HiddenFor(model => model.PatientId)
-
-  @Html.Label("Patient Name")
-  @Html.EditorFor(model => model.PatientName)
-
-  @Html.Label("Select Patient")
-  @Html.DropDownList("PatientId")
-
+    @Html.HiddenFor(model => model.PatientId)
+  <p>
+    @Html.Label("Patient Name")
+    @Html.EditorFor(model => model.PatientName)
+  </p>
+  <p>
+    @Html.Label("Date of Next Appointment:")
+    @Html.TextBoxFor(model => model.AppointmentDate)
+  </p>
+  <p>
   <input type="submit" value="save" />
+  </p>
 }
 
 <p>@Html.ActionLink("Back to Patient List", "Index")</p>
